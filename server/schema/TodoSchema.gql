@@ -12,7 +12,6 @@ input TodoInput {
 }
 
 type Query {
-  Todo(_id: ID!): Todo
   Todos: [Todo]
 }
 
