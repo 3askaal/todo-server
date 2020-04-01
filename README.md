@@ -2,4 +2,10 @@
 
 ## Server
 
-Small **GraphQL Apollo Server** with **Typescript** support that uses **Mongoose (MongoDB)** as database and **generates Typescript types** based on the GraphQL schema for use in both Front-end and Back-end.
+Small Todo App server made as a boilerplate.
+
+- GraphQL Apollo server with Typescript support
+- Mongoose (MongoDB) as database
+- Generates typescript types for use in server and [client](https://github.com/3askaal/todo-client)
+- Linting and formatting with ESLint and Prettier
+- Fully tested with Jest
