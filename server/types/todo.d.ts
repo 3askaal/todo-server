@@ -57,13 +57,7 @@ export type TMutationDeleteTodoArgs = {
 
 export type TQuery = {
    __typename?: 'Query';
-  Todo?: Maybe<TTodo>;
   Todos?: Maybe<Array<Maybe<TTodo>>>;
-};
-
-
-export type TQueryTodoArgs = {
-  _id: Scalars['ID'];
 };
 
 export type TTodo = {
@@ -155,8 +149,8 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type TResolversTypes = {
   Query: ResolverTypeWrapper<{}>,
-  ID: ResolverTypeWrapper<Scalars['ID']>,
   Todo: ResolverTypeWrapper<TTodo>,
+  ID: ResolverTypeWrapper<Scalars['ID']>,
   String: ResolverTypeWrapper<Scalars['String']>,
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>,
   Mutation: ResolverTypeWrapper<{}>,
@@ -169,8 +163,8 @@ export type TResolversTypes = {
 /** Mapping between all available schema types and the resolvers parents */
 export type TResolversParentTypes = {
   Query: {},
-  ID: Scalars['ID'],
   Todo: TTodo,
+  ID: Scalars['ID'],
   String: Scalars['String'],
   Boolean: Scalars['Boolean'],
   Mutation: {},
@@ -225,7 +219,6 @@ export type TMutationResolvers<ContextType = any, ParentType extends TResolversP
 };
 
 export type TQueryResolvers<ContextType = any, ParentType extends TResolversParentTypes['Query'] = TResolversParentTypes['Query']> = {
-  Todo?: Resolver<Maybe<TResolversTypes['Todo']>, ParentType, ContextType, RequireFields<TQueryTodoArgs, '_id'>>,
   Todos?: Resolver<Maybe<Array<Maybe<TResolversTypes['Todo']>>>, ParentType, ContextType>,
 };
 

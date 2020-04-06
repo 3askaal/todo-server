@@ -9,7 +9,7 @@ generates:
       - 'typescript-mongodb'
     config:
       typesPrefix: T
-  ../client/src/types/todo.d.ts:
+  ../todo-client/src/types/todo.d.ts:
     plugins:
       - 'typescript'
       - 'typescript-resolvers'
