@@ -4,7 +4,7 @@
   "author": "Bas Kaal",
   "scripts": {
     "start": "nodemon --watch 'server/**/*' -e ts,tsx,graphql,gql --exec 'ts-node' ./server/app.ts",
-    "prod": "NODE_ENV=production forever -v -c ts-node ./server/app.ts",
+    "prod": "forever -v -c ts-node ./server/app.ts",
     "types": "graphql-codegen --config codegen.yml",
     "test": "jest --detectOpenHandles --coverage",
     "lint": "eslint **/*.ts"
@@ -18,7 +18,10 @@
     "graphql.macro": "^1.4.2",
     "merge-graphql-schemas": "^1.7.6",
     "mongoose": "^5.9.1",
-    "node-cron": "^2.0.3"
+    "node-cron": "^2.0.3",
+    "forever": "^2.0.0",
+    "typescript": "^3.8.3",
+    "ts-node": "^8.6.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.13.1",
@@ -35,11 +38,8 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "forever": "^2.0.0",
     "jest": "^25.2.4",
     "nodemon": "^2.0.2",
-    "ts-jest": "^25.3.0",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.8.3"
+    "ts-jest": "^25.3.0"
   }
 }
