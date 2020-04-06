@@ -9,6 +9,10 @@ generates:
       - 'typescript-mongodb'
     config:
       typesPrefix: T
-  ./graphql.schema.json:
+  ../client/src/types/todo.d.ts:
     plugins:
-      - 'introspection'
+      - 'typescript'
+      - 'typescript-resolvers'
+      - 'typescript-mongodb'
+    config:
+      typesPrefix: T
