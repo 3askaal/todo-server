@@ -1,36 +1,44 @@
 import { Col } from '../models'
-import { TMutationResolvers, TQueryResolvers } from '../types/todo.d'
+import {
+  TTodo,
+  TMutationCreateTodoArgs,
+  TMutationUpdateTodoArgs,
+  TMutationDeleteTodoArgs,
+} from '../types/todo.d'
 
-export const Query: TQueryResolvers = {
+export const Query: any = {
   Todos: async () => {
     const todos = await Col.find({})
     return todos
   },
 }
 
-export const Mutation: TMutationResolvers = {
-  createTodo: async (_, { data }) => {
-    const todo = await Col.create(data)
-    return todo
+export const Mutation = {
+  createTodo: async (
+    _: any,
+    { data }: TMutationCreateTodoArgs,
+  ): Promise<TTodo> => {
+    return Col.create(data)
   },
-  updateTodo: async (_, { _id, data }) => {
-    const todo = await Col.findByIdAndUpdate(_id, data, { new: true })
-    return todo
+  updateTodo: async (
+    _: any,
+    { _id, data }: TMutationUpdateTodoArgs,
+  ): Promise<TTodo> => {
+    return Col.findByIdAndUpdate(_id, data, { new: true })
   },
-  deleteTodo: async (_, { _id }) => {
-    const todo = await Col.findByIdAndRemove(_id)
-    return todo
+  deleteTodo: async (
+    _: any,
+    { _id }: TMutationDeleteTodoArgs,
+  ): Promise<TTodo> => {
+    return Col.findByIdAndRemove(_id)
   },
-  checkAll: async () => {
-    const res = await Col.updateMany({}, { completed: true })
-    return res
+  checkAll: async (): Promise<boolean> => {
+    return Col.updateMany({}, { completed: true })
   },
-  uncheckAll: async () => {
-    const res = await Col.updateMany({}, { completed: false })
-    return res
+  uncheckAll: async (): Promise<boolean> => {
+    return Col.updateMany({}, { completed: false })
   },
-  deleteAll: async () => {
-    const res = await Col.remove({})
-    return !!res
+  deleteAll: async (): Promise<boolean> => {
+    return !!Col.remove({})
   },
 }

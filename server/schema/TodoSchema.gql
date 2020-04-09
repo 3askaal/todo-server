@@ -12,16 +12,16 @@ input TodoInput {
 }
 
 type Query {
-  Todos: [Todo]
+  Todos: [Todo]!
 }
 
 type Mutation {
-  createTodo(data: TodoInput): Todo
-  updateTodo(_id: ID!, data: TodoInput): Todo
-  deleteTodo(_id: ID!): Todo
-  checkAll: Boolean
-  uncheckAll: Boolean
-  deleteAll: Boolean
+  createTodo(data: TodoInput): Todo!
+  updateTodo(_id: ID!, data: TodoInput): Todo!
+  deleteTodo(_id: ID!): Todo!
+  checkAll: Boolean!
+  uncheckAll: Boolean!
+  deleteAll: Boolean!
 }
 
 schema {

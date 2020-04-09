@@ -31,12 +31,12 @@ export enum TCacheControlScope {
 
 export type TMutation = {
    __typename?: 'Mutation';
-  createTodo?: Maybe<TTodo>;
-  updateTodo?: Maybe<TTodo>;
-  deleteTodo?: Maybe<TTodo>;
-  checkAll?: Maybe<Scalars['Boolean']>;
-  uncheckAll?: Maybe<Scalars['Boolean']>;
-  deleteAll?: Maybe<Scalars['Boolean']>;
+  createTodo: TTodo;
+  updateTodo: TTodo;
+  deleteTodo: TTodo;
+  checkAll: Scalars['Boolean'];
+  uncheckAll: Scalars['Boolean'];
+  deleteAll: Scalars['Boolean'];
 };
 
 
@@ -57,7 +57,7 @@ export type TMutationDeleteTodoArgs = {
 
 export type TQuery = {
    __typename?: 'Query';
-  Todos?: Maybe<Array<Maybe<TTodo>>>;
+  Todos: Array<Maybe<TTodo>>;
 };
 
 export type TTodo = {
@@ -210,16 +210,16 @@ export type TMapDirectiveArgs = {   path: Scalars['String']; };
 export type TMapDirectiveResolver<Result, Parent, ContextType = any, Args = TMapDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export type TMutationResolvers<ContextType = any, ParentType extends TResolversParentTypes['Mutation'] = TResolversParentTypes['Mutation']> = {
-  createTodo?: Resolver<Maybe<TResolversTypes['Todo']>, ParentType, ContextType, RequireFields<TMutationCreateTodoArgs, never>>,
-  updateTodo?: Resolver<Maybe<TResolversTypes['Todo']>, ParentType, ContextType, RequireFields<TMutationUpdateTodoArgs, '_id'>>,
-  deleteTodo?: Resolver<Maybe<TResolversTypes['Todo']>, ParentType, ContextType, RequireFields<TMutationDeleteTodoArgs, '_id'>>,
-  checkAll?: Resolver<Maybe<TResolversTypes['Boolean']>, ParentType, ContextType>,
-  uncheckAll?: Resolver<Maybe<TResolversTypes['Boolean']>, ParentType, ContextType>,
-  deleteAll?: Resolver<Maybe<TResolversTypes['Boolean']>, ParentType, ContextType>,
+  createTodo?: Resolver<TResolversTypes['Todo'], ParentType, ContextType, RequireFields<TMutationCreateTodoArgs, never>>,
+  updateTodo?: Resolver<TResolversTypes['Todo'], ParentType, ContextType, RequireFields<TMutationUpdateTodoArgs, '_id'>>,
+  deleteTodo?: Resolver<TResolversTypes['Todo'], ParentType, ContextType, RequireFields<TMutationDeleteTodoArgs, '_id'>>,
+  checkAll?: Resolver<TResolversTypes['Boolean'], ParentType, ContextType>,
+  uncheckAll?: Resolver<TResolversTypes['Boolean'], ParentType, ContextType>,
+  deleteAll?: Resolver<TResolversTypes['Boolean'], ParentType, ContextType>,
 };
 
 export type TQueryResolvers<ContextType = any, ParentType extends TResolversParentTypes['Query'] = TResolversParentTypes['Query']> = {
-  Todos?: Resolver<Maybe<Array<Maybe<TResolversTypes['Todo']>>>, ParentType, ContextType>,
+  Todos?: Resolver<Array<Maybe<TResolversTypes['Todo']>>, ParentType, ContextType>,
 };
 
 export type TTodoResolvers<ContextType = any, ParentType extends TResolversParentTypes['Todo'] = TResolversParentTypes['Todo']> = {
