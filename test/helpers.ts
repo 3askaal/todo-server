@@ -7,13 +7,13 @@ import resolvers from '../server/resolvers'
 
 export const loadQueryFromClient = (queryFileName: string): string => {
   return fileLoader(
-    path.join(__dirname, `../../app/src/queries/${queryFileName}`),
+    path.join(__dirname, `../../todo-client/src/queries/${queryFileName}`),
   )[0]
 }
 
 export const loadMutationFromClient = (mutationFileName: string): string => {
   return fileLoader(
-    path.join(__dirname, `../../app/src/mutations/${mutationFileName}`),
+    path.join(__dirname, `../../todo-client/src/mutations/${mutationFileName}`),
   )[0]
 }
 
