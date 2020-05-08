@@ -38,7 +38,7 @@ export const Mutation = {
   uncheckAll: async (): Promise<boolean> => {
     return Col.updateMany({}, { completed: false })
   },
-  deleteAll: async (): Promise<boolean> => {
-    return !!Col.remove({})
+  deleteAll: async (): Promise<any> => {
+    return Col.remove({})
   },
 }
