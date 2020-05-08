@@ -1,4 +1,4 @@
-export const TODOS_DATA: any = [
+export const TODOS: any = [
   { content: 'write todo server (NodeJS/Typescript/GraphQL)', completed: true },
   { content: 'write tests for todo server', completed: true },
   { content: 'write todo client (React/Typescript/Apollo)', completed: true },

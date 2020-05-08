@@ -1,7 +1,10 @@
-import { TODOS_DATA } from './data/todos'
+import { TODOS } from './data/todos'
 import { Col } from './models'
 
 export async function reset() {
   await Col.remove({})
-  await Col.create(TODOS_DATA)
+  
+  TODOS.forEach(async (TODO: any) => {
+    await Col.create(TODO)  
+  })
 }
