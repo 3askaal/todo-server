@@ -1,6 +1,10 @@
 export const TODOS_DATA: any = {
   data: [
-    { content: 'create todo app', completed: true },
-    { content: 'find new job' },
+    { content: 'write todo app server (NodeJS/Typescript)', completed: true },
+    { content: 'write tests for todo app server', completed: true },
+    { content: 'write todo app client (React/Typescript)', completed: true },
+    { content: 'write tests for todo app client', completed: true },
+    { content: 'walk the dogs at my parents house' },
+    { content: 'find awesome new job' },
   ],
 }
