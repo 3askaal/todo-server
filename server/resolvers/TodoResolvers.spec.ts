@@ -71,18 +71,18 @@ describe('Mutations', () => {
   it('checkAll', async () => {
     const mutation = loadMutationFromClient('CheckAllMutation.gql')
     const res = await fakeRequest(mutation)
-    expect(res.data.checkAll).toBe(null)
+    expect(res.data.checkAll).toBe(true)
   })
 
   it('uncheckAll', async () => {
     const mutation = loadMutationFromClient('UncheckAllMutation.gql')
     const res = await fakeRequest(mutation)
-    expect(res.data.uncheckAll).toBe(null)
+    expect(res.data.uncheckAll).toBe(true)
   })
 
   it('deleteAll', async () => {
     const mutation = loadMutationFromClient('DeleteAllMutation.gql')
     const res = await fakeRequest(mutation)
-    expect(res.data.deleteAll).toBe(null)
+    expect(res.data.deleteAll).toBe(true)
   })
 })

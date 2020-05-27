@@ -33,12 +33,12 @@ export const Mutation = {
     return Col.findByIdAndRemove(_id)
   },
   checkAll: async (): Promise<boolean> => {
-    return Col.updateMany({}, { completed: true })
+    return !!Col.updateMany({}, { completed: true })
   },
   uncheckAll: async (): Promise<boolean> => {
-    return Col.updateMany({}, { completed: false })
+    return !!Col.updateMany({}, { completed: false })
   },
   deleteAll: async (): Promise<any> => {
-    return Col.remove({})
+    return !!Col.deleteMany({})
   },
 }
